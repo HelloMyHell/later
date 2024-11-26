@@ -1,0 +1,58 @@
+local List = {
+	"17953224",
+	"83446210",
+	"3220635912",
+	"72424171",
+	"3198052693",
+	"3616622530",
+	"1112408911",
+	"747173429",
+	"1366792545",
+	"423391780",
+	"643323527",
+	"1518062675",
+	"1030888863",
+	"117376988",
+	"1099809016",
+	"493290306",
+	"1473064960",
+	"900427200",
+	"128223390",
+	"70919590",
+	"249701756",
+	"97055421",
+	"258333966",
+	"1082879086",
+	"170890247",
+	"1264788134",
+	"1978209743",
+	"392907063",
+	"1404500015",
+	"1371120770",
+	"2686673978",
+	"405153629",
+	"321378959",
+}
+
+local function isAdmin(id)
+	for _, v in ipairs(List) do
+		if id == v then
+			return true
+		end
+	end
+	return false
+end
+
+if isAdmin(game:GetService("Players").LocalPlayer.UserId) then
+	return true
+end
+
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+	if isAdmin(v.UserId) then
+		warn("Admin in server")
+		return true
+	else
+		print("No admin")
+		return false
+	end
+end
