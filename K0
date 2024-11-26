@@ -44,15 +44,15 @@ local function isAdmin(id)
 end
 
 if isAdmin(game:GetService("Players").LocalPlayer.UserId) then
-	return true
+	return "player"
 end
 
 for i,v in pairs(game:GetService("Players"):GetPlayers()) do
 	if isAdmin(v.UserId) then
 		--warn("Admin in server")
-		return true
+		return "serverTrue"
 	else
 		--print("No admin")
-		return false
+		return "serverFalse"
 	end
 end
