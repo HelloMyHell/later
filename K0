@@ -49,10 +49,10 @@ end
 
 for i,v in pairs(game:GetService("Players"):GetPlayers()) do
 	if isAdmin(v.UserId) then
-		warn("Admin in server")
+		--warn("Admin in server")
 		return true
 	else
-		print("No admin")
+		--print("No admin")
 		return false
 	end
 end
